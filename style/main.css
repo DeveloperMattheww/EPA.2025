@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
+
+:root {
+    --bg: #C0C0C0;
+    --bg-header: #434343;
+    --primary: #F4F4F4;
+    --segundary: #000;
+    --tertiary: #434343;
+    --task-primary: #AE0202;
+    --task-segundary: #C7CD2E;
+    --task-tertiary: #02AE07;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Baloo Paaji 2", sans-serif;
+}
+
+header {
+    background-color: #434343;
+    padding: .7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > img {
+    margin: 0 1.5rem;
+}
+
+header .ul-header {
+    display: flex;
+    gap: 2rem;
+}
+
+header .ul-header .iten-header {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--primary);
+    padding: .5rem;
+}
