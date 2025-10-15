@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
 
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    min-height: 100vh;
+html,
+body {
+    min-height: 100svh;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    background: 
-    linear-gradient(to bottom, transparent 44%, #ffffff20 70%, #ffffff25 84%, #ffffff25 100%),
-    linear-gradient(to right, #455473 0%, #455473 50%, #D1D1D1 50%, #D1D1D1 100%);
+    background:
+        linear-gradient(to bottom, transparent 44%, #ffffff20 70%, #ffffff25 84%, #ffffff25 100%),
+        linear-gradient(to right, #455473 0%, #455473 50%, #D1D1D1 50%, #D1D1D1 100%);
 }
 
 button {
@@ -48,10 +48,10 @@ main {
     height: 600px;
     transform: translateY(-40px);
 
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
 }
 
-.info-site img{
+.info-site img {
     width: 100px;
 }
 
@@ -84,19 +84,19 @@ main {
     width: 48%;
 }
 
-.login-site form{
+.login-site form {
     display: flex;
     flex-direction: column;
     width: 55%;
     gap: 5px;
 }
 
-.login-site form label{
+.login-site form label {
     display: flex;
     flex-direction: column;
     font-size: 21px;
     font-weight: bold;
-    width: 60%;
+    width: 100%;
 }
 
 .login-site form input {
@@ -139,4 +139,85 @@ main {
     font-weight: bold;
     padding: 10px;
     border-radius: 10px;
+}
+
+@media only screen and (min-width: 1080px) {
+    #menu-login {
+        width: 700px;
+        height: 500px;
+    }
+
+    .info-site p {
+        padding: 0 45px 0 45px;
+        font-size: 18px;
+    }
+
+    .info-site h1 {
+        font-size: 43px;
+    }
+
+    .login-site form label {
+        font-size: 18px;
+    }
+
+    .form-buttons #btn-login {
+        font-size: 20px;
+    }
+
+    .form-buttons #btn-register {
+        font-size: 20px;
+    }
+
+    .forgot-password a {
+        font-size: 16px;
+        padding: 10px 0 30px;
+    }
+
+    .form-buttons {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-login {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 900px;
+    }
+
+    .info-site {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        background-color: #455473;
+        color: white;
+        text-align: justify;
+    }
+
+    .login-site {
+        width: 100%;
+        background-color: #D1D1D1;
+    }
+
+    .login-site form label {
+        padding-top: 30px
+    }
+
+    .info-site p {
+        padding-bottom: 30px;
+        font-size: 18px;
+    }
+
+    .info-site img {
+        width: 90px;
+        padding-top: 50px;
+    }
+
+    .form-buttons {
+        padding-bottom: 50px;
+    }
 }
