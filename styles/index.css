@@ -183,7 +183,9 @@ main {
         display: flex;
         flex-direction: column;
         width: 400px;
-        height: 900px;
+        height: 950px;
+        margin-bottom: 60px;
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.5);
     }
 
     .info-site {
@@ -219,5 +221,13 @@ main {
 
     .form-buttons {
         padding-bottom: 50px;
+    }
+
+    .info-site h1 {
+        font-size: 38px;
+    }
+
+    .form-buttons {
+        gap: 30px;
     }
 }
