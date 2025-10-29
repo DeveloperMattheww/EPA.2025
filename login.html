@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kanblan</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <script src="scripts/darkmode.js" defer></script>
+    <script src="scripts/logincad.js" defer></script>
+    <link rel="stylesheet" href="styles/halloween.css">
+    <script src="scripts/halloween.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">
+            <img src="src/white-logo.svg">
+        </a>
+
+        <button title="Modo Halloween" id="toggle-theme"></button>
+    </header>
+    <main>
+        <div id="menu-login">
+            <div class="info-site">
+                <img src="resources/images/logoKB_branca.png" alt="">
+                <h1>Kanblan</h1>
+                <p>Kanblan, o projeto INOVADOR. Seguindo a estratégia de otimização de fluxo japonesa Kanban, o Kanblan
+                    busca fazer com que seu serviço seja o mais dinâmico, prático e funcional possível. Use Kanblan, use
+                    a dinamicidade e a praticidade.</p>
+            </div>
+            <div class="login-site">
+                <form action="login-form">
+                    <label for="username-login">Username</label>
+                    <input type="text" id="username-login" name="username-login" autocomplete="off">
+
+                    <label for="password-login">Senha</label>
+                    <input type="password" name="password-login" id="password-login">
+
+
+                    <div class="forgot-password">
+                        <a href="">Esqueceu a senha?</a>
+                        <span class="mensagem-erro" style="color: transparent;">Usuário ou senha incorretos</span>
+                    </div>
+                </form>
+
+
+
+
+                <div class="form-buttons">
+                    <button id="btn-login" type="button">Login</button>
+                    <button id="btn-register" type="button"><a href="cadastro.html">Cadastre-se</a></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="quest-sidebar" id="questSidebar">
+            <div class="quest-header">
+                <h2>🎃 Missões de Halloween</h2>
+                <button id="toggleQuests">×</button>
+            </div>
+
+            <div class="quest-content">
+                <p id="questText">1 - Crie uma conta. Lembre-se do usuário e senha.</p>
+                <button id="nextQuest" disabled>Próxima Quest →</button>
+            </div>
+        </div>
+
+        <button class="open-quests-btn" id="openQuests">🎃 Missões</button>
+
+</body>
+
+</html>

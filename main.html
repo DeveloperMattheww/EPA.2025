@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KanBlan</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/darkmode.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/logincad.js" defer></script>
+  <script src="scripts/tempmsg.js" defer></script>
+  <link rel="stylesheet" href="styles/halloween.css">
+  <script src="scripts/halloween.js" defer></script>
+</head>
+
+<body>
+
+  <div id="meu-alert" class="alerta">
+    <span id="mensagem-alerta">Ops! Essa função está em modo ninja invisível.</span>
+    <button onclick="fecharAlerta()">✖</button>
+  </div>
+
+
+  <!-- Tela Principal -->
+  <div class="screen" id="main-screen">
+
+    <header class="header-principal">
+      <div class="header-logo-perfil">
+        <img src="src/white-logo.svg" alt="Imagem da logo">
+        <img src="src/user-icon.svg" alt="Imagem de Usuario" id="btn-user">
+      </div>
+
+      <nav>
+        <ul class="ul-buttons">
+          <a href="index.html">
+            <li>
+
+              <img src="src/home-icon.svg" alt="Icone de casa">
+
+              <p>Página inicial
+              </p>
+            </li>
+          </a>
+          <li>
+            <img src="src/calendar-icon.svg" alt="Icone de casa">
+            <p>Tarefas</p>
+          </li>
+          <li>
+            <img src="src/star-icon.svg" alt="Icone de casa">
+            <p>Favoritos</p>
+          </li>
+        </ul>
+      </nav>
+
+      <button id="toggle-theme" title="Modo Halloween"></button>
+
+    </header>
+
+    <main>
+      <div class="main-content">
+
+        <div class="main-header">
+          <ul class="btn-itens">
+            <li class="iten" onclick="javascript:pesquisar()">
+              <span id="icon-pesquisa"></span>
+              <span>Pesquisar</span>
+            </li>
+            <li class="iten" onclick="javascript:pessoas()">
+              <span id="icon-user-filter"></span>
+              <span>Pessoas</span>
+            </li>
+            <li class="iten" onclick="javascript:filtro()">
+              <span id="icon-filter"></span>
+              <span>Filtro</span>
+            </li>
+            <li class="iten" onclick="javascript:ordenar()">
+              <span id="icon-ordenar"></span>
+              <span>Ordenar por</span>
+            </li>
+          </ul>
+
+          <div class="campo-add-tabela">
+            <span>Criar nova tabela</span>
+            <button id="addTable" onclick="abrirModalCriarColuna()"></button>
+          </div>
+        </div>
+
+        <div class="conteudo-kanban">
+          <h2>Etec Portas Abertas | 2025 - Desenvolvimento de Sistemas</h2>
+          <div class="tabelas">
+            <!-- As tabelas serão adicionadas aqui via JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <aside class="aside-lateral" style="display: none;">
+        <img id="btn-menu-lateral" width="50" height="50"
+          src="https://img.icons8.com/material-rounded/96/circled-chevron-right.png" alt="circled-chevron-right" />
+      </aside>
+    </main>
+
+  </div>
+
+  <!-- Modal Adicionar Tabela -->
+  <div class="add-Tabela modal oculto">
+    <form id="formTabelas">
+      <div class="tabelaSelecao">
+        <span>
+          <button class="btn-fechar" type="button"
+            onclick="alternarModal(document.querySelector('.add-Tabela'))">X</button>
+        </span>
+        <header class="header-tabela">
+          <h1>Criar Tabela</h1>
+        </header>
+        <label for="nomeTabela">Digite o nome da sua tabela</label>
+        <input type="text" id="nomeTabela" autocomplete="off" maxlength="20" required>
+        <label for="corTabela">Selecione uma cor</label>
+        <input type="color" name="corTabela" id="corTabela" value="#cc0000">
+        <button id="btnTabela" type="submit">Confirmar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Modal Adicionar Task -->
+  <div class="add-Task modal oculto">
+    <form id="formTarefas">
+      <div class="tabelaSelecao">
+        <span>
+          <button class="btn-fechar" type="button"
+            onclick="alternarModal(document.querySelector('.add-Task'))">X</button>
+        </span>
+        <header class="header-tabela">
+          <h1>Criar Task</h1>
+        </header>
+        <label for="nomeTask">Digite a sua task</label>
+        <input type="text" id="nomeTask" maxlength="15" required autocomplete="off">
+        <label for="descricaoTask">Descrição da task</label>
+        <textarea type="text" id="descricaoTask" rows="5" maxlength="216"></textarea>
+        <label for="data">Escolha sua data</label>
+        <input type="date" id="data" required>
+        <button type="button" id="btnTask" onclick="adicionarTarefa()">Confirmar</button>
+      </div>
+    </form>
+
+  </div>
+
+  <aside class="menu-lateral fechado" id="aside-menu-lateral" style="display: none;">
+    <button id="btn-sair-menu">X</button>
+
+    <div class="menu-conteudo">
+      <div class="conteudo-user">
+        <span>Usuario 01</span>
+        <button>apagar</button>
+      </div>
+      <div class="conteudo-user">
+        <span>Usuario 02</span>
+        <button>apagar</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="quest-sidebar" id="questSidebar">
+    <div class="quest-header">
+      <h2>🎃 Missões de Halloween</h2>
+      <button id="toggleQuests">×</button>
+    </div>
+
+    <div class="quest-content">
+      <p id="questText">1 - Crie uma conta. Lembre-se do usuário e senha.</p>
+      <button id="nextQuest" disabled>Próxima Quest →</button>
+    </div>
+  </div>
+
+  <button class="open-quests-btn" id="openQuests">🎃 Missões</button>
+
+  <div class="halloween-elements">
+    <h2 id="help-me">HELP-ME</h2>
+    <h2 id="no-one">NO ONE ESCAPES</h2>
+    <h2 id="coming">THEY ARE COMING</h2>
+    <h2 id="behind">BEHIND YOU!</h2>
+    <img id="chesire" src="src/halloween/chesiresmile.gif" alt="" width="200" height="200">
+    <img id="parede-olhos" src="src/halloween/paredeolhos.png" alt="">
+  </div>
+
+</body>
+
+</html>

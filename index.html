@@ -1,39 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Kanblan</title>
+    <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/halloween.css">
+    <script src="scripts/darkmode.js" defer></script>
+    <script src="scripts/halloween.js" defer></script>
+    <title>Homepage - KanBlan</title>
 </head>
+
 <body>
-    <header>
+
+    <header class="header-principal">
+        <div class="header-logo-perfil">
+            <img src="src/white-logo.svg" alt="Imagem da logo">
+        </div>
+
+        <nav>
+            <ul class="ul-buttons" style="display: none;">
+                <li>
+                    <img src="src/home-icon.svg" alt="Icone de casa">
+                    <p>Página inicial</p>
+                </li>
+                <li>
+                    <img src="src/calendar-icon.svg" alt="Icone de casa">
+                    <p>Tarefas</p>
+                </li>
+                <li>
+                    <img src="src/star-icon.svg" alt="Icone de casa">
+                    <p>Favoritos</p>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="cad-log">
+            <a href="login.html">
+                <p class="login">
+                    Login
+                </p>
+            </a>
+            <a href="cadastro.html">
+                <p class="cadastro">
+                    Cadastro
+                </p>
+            </a>
+        </div>
+
+        <button id="toggle-theme" title="Modo Halloween"></button>
+
     </header>
     <main>
-        <div id="menu-login">
-            <div class="info-site">
-                <img src="resources/images/logoKB_branca.png" alt="">
-                <h1>Kanblan</h1>
-                <p>Kanblan, o projeto INOVADOR. Seguindo a estratégia de otimização de fluxo japonesa Kanban, o Kanblan busca fazer com que seu serviço seja o mais dinâmico, prático e funcional possível. Use Kanblan, use a dinamicidade e a praticidade.</p>
+        <div class="img-txt">
+            <div class="logo-novo">
+                <img src="src/kboard.png" alt="">
             </div>
-            <div class="login-site">
-                <form action="login-form">
-                    <label for="username">Usuário/E-mail</label>
-                    <input type="text" id="username" name="username">
-
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" id="password">
-                    
-                    <div class="forgot-password">
-                        <a href="">Esqueceu a senha?</a>
-                    </div>
-                </form>
-                <div class="form-buttons">
-                    <button id="btn-login">Login</button>
-                    <button id="btn-register">Cadastre-se</button>
-                </div>
+            <div class="txt">
+                <h1>
+                    KANBLAN
+                </h1>
+                <p>
+                    Transforme sua produtividade com o Kanblan.
+                    O Kanblan adota a metodologia Kanban para levar a gestão de tarefas a um novo patamar de eficiência
+                    e organização.
+                    <br>
+                    <br>
+                    Mas afinal, o que é Kanban?
+                    É um sistema inteligente de planejamento, acompanhamento e otimização de atividades, ideal para
+                    projetos, rotinas pessoais ou fluxos de trabalho corporativos.
+                    <br>
+                    <br>
+                    Precisa montar uma rotina de estudos? O Kanblan ajuda você a manter o foco.
+                    Deseja aprimorar a gestão interna da sua equipe? O Kanblan torna tudo mais claro e ágil.
+                    Gerencia projetos de software ou negócios complexos? O Kanblan oferece o controle e a visão que você
+                    precisa.
+                    <br>
+                    <br>
+                    <br>
+                    Simples, moderno e poderoso.
+                    O Kanblan é mais do que uma ferramenta — é o seu novo parceiro na busca por produtividade e
+                    excelência.
+                </p>
             </div>
         </div>
+
+        <div class="quest-sidebar" id="questSidebar">
+            <div class="quest-header">
+                <h2>🎃 Missões de Halloween</h2>
+                <button id="toggleQuests">×</button>
+            </div>
+
+            <div class="quest-content">
+                <p id="questText">1 - Crie uma conta. Lembre-se do usuário e senha.</p>
+                <button id="nextQuest" disabled>Próxima Quest →</button>
+            </div>
+        </div>
+
+        <button class="open-quests-btn" id="openQuests">🎃 Missões</button>
+
     </main>
 </body>
 </html>

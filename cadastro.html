@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/logincad.js" defer></script>
+    <script src="scripts/darkmode.js" defer></script>
+    <title>Cadastro - Kanblan</title>
+    <link rel="stylesheet" href="styles/register.css">
+    <link rel="stylesheet" href="styles/halloween.css">
+    <script src="scripts/halloween.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="index.html">
+            <img src="src/white-logo.svg">
+        </a>
+
+        <button title="Modo Halloween" id="toggle-theme"></button>
+    </header>
+    <main>
+        <div id="menu-cadastro">
+            <div class="info-site">
+                <img src="resources/images/logoKB_branca.png" alt="">
+                <h1>Kanblan</h1>
+                <p>Kanblan, o projeto INOVADOR. Seguindo a estratégia de otimização de fluxo japonesa Kanban, o Kanblan
+                    busca fazer com que seu serviço seja o mais dinâmico, prático e funcional possível. Use Kanblan, use
+                    a dinamicidade e a praticidade.</p>
+            </div>
+            <div class="cadastro-site">
+                <form action="cadastro-form">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" autocomplete="off">
+
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" name="username" autocomplete="off">
+
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password">
+
+                    <label for="repeat-password">Repetir a Senha</label>
+                    <input type="password" name="password" id="repeat-password">
+
+                    <span class="mensagem-incompleta" style="display: none"> Preencha todos os campos</span>
+                    <span class="existente" style="display: none">Usuário já cadastrado</span>
+                    <span class="senha-inexiste" style="display: none">As senhas não coincidem</span>
+                    <span class="sucesso" style="display: none">Usuário cadastrado com sucesso</span>
+
+                </form>
+                <div class="form-buttons">
+                    <button id="btn-cadastrar">Cadastre-se</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="mensagem-sucesso" style="display: none">
+        <div class="mensagem">
+            <button class="btn-fechar">X</button>
+            <p>Usuário cadastrado com sucesso! ✔</p>
+        </div>
+    </div>
+
+    <div class="quest-sidebar" id="questSidebar">
+            <div class="quest-header">
+                <h2>🎃 Missões de Halloween</h2>
+                <button id="toggleQuests">×</button>
+            </div>
+
+            <div class="quest-content">
+                <p id="questText">1 - Crie uma conta. Lembre-se do usuário e senha.</p>
+                <button id="nextQuest" disabled>Próxima Quest →</button>
+            </div>
+        </div>
+
+        <button class="open-quests-btn" id="openQuests">🎃 Missões</button>
+
+</body>
+
+</html>
