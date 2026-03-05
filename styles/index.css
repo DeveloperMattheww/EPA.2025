@@ -196,8 +196,9 @@ main .txt {
     align-items: center;
     flex-direction: column;
     text-align: justify;
-    padding: 90px;
+    padding: 0 90px;
     color: var(--texto-preto);
+    gap: 15px;
 }
 
 .txt h1, p {
